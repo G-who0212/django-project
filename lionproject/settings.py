@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
     'account.apps.AccountConfig',
-    'storages'
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -141,11 +141,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #aws
 AWS_ACCESS_KEY_ID = 'AKIAWODBLJNGCCX4B4ME'
+# os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = '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'
+# os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'hoo-likelion-django-lesson'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_REGION_NAME = 'ap-northeast-2'
-# AWS_S3_CUSTOM_DOMAIN = AWS_STORAGE_BUCKET_NAME +'.s3.amazonaws.com'
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
